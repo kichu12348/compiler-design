@@ -21,7 +21,7 @@ int yywrap(){
 }
 
 int main(){
-    printf("Enter Text: \n");
+    printf("Enter Text then press (Ctrl+D): \n");
 
     yylex();
 
