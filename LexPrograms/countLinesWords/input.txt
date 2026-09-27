@@ -1,0 +1,10 @@
+int main(){
+    printf("Enter Text then press (Ctrl+D): \n");
+
+    yylex();
+
+    printf("\nLines: %d\n",lineCount);
+    printf("Words: %d\n",wordCount);
+    printf("Chars: %d\n",charCount);
+    return 0;
+}
