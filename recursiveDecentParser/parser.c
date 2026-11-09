@@ -32,7 +32,6 @@
 
 #include <stdio.h>
 #include <ctype.h>
-#include <string.h>
 
 char buff[100];
 int pos;
