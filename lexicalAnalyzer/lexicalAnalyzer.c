@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 
-char *keywords[] = {
+char keywords[11][10] = {
     "int", "float", "char", "double", "void", "if", "else", "while", "for", "do", "return"};
 
 int kwSize = 11;
