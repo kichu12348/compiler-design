@@ -62,6 +62,13 @@ void push(char c)
     stack[++top] = c;
 }
 
+char pop()
+{
+    char c = stack[top];
+    top--;
+    return c;
+}
+
 int prec(char ch)
 {
     if (ch == '*' || ch == '/')
@@ -74,7 +81,6 @@ int prec(char ch)
 
 void postfix(char inp[], char out[])
 {
-    char stack[50];
     int k = 0;
 
     int len = strlen(inp);
@@ -88,28 +94,32 @@ void postfix(char inp[], char out[])
         }
         else if (ch == '(')
         {
-            stack[++top] = ch;
+            push(ch);
         }
         else if (ch == ')')
         {
             while (top >= 0 && stack[top] != '(')
             {
-                out[k++] = stack[top--];
+                out[k] = pop();
+                k++;
             }
-            top--;
+            pop(); // pop out the ( from stack
         }
         else
         {
             while (top >= 0 && prec(stack[top]) >= prec(ch))
             {
-                out[k++] = stack[top--];
+                out[k++] = pop();
             }
-            stack[++top] = ch;
+            push(ch);
         }
     }
 
     while (top >= 0)
-        out[k++] = stack[top--];
+    {
+        out[k] = pop();
+        k++;
+    }
     out[k] = '\0';
 }
 
