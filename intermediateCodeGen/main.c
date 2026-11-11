@@ -57,7 +57,10 @@
 char stack[50];
 int top = -1;
 
-void push(char c) {}
+void push(char c)
+{
+    stack[++top] = c;
+}
 
 int prec(char ch)
 {
