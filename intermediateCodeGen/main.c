@@ -59,8 +59,7 @@ int top = -1;
 
 void push(char c)
 {
-    top++;
-    stack[top] = c;
+    stack[++top] = c;
 }
 
 char pop()
