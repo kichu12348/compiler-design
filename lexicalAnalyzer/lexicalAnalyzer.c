@@ -7,7 +7,7 @@ char *keywords[] = {
 
 int kwSize = 11;
 
-int isKeyword(char *word)
+int isKeyword(char word[])
 {
     for (int i = 0; i < kwSize; i++)
     {

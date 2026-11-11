@@ -54,6 +54,11 @@
 #include <string.h>
 #include <ctype.h>
 
+char stack[50];
+int top = -1;
+
+void push(char c) {}
+
 int prec(char ch)
 {
     if (ch == '*' || ch == '/')
@@ -67,7 +72,7 @@ int prec(char ch)
 void postfix(char inp[], char out[])
 {
     char stack[50];
-    int top = -1, k = 0;
+    int k = 0;
 
     int len = strlen(inp);
 
